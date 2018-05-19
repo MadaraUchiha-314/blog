@@ -1,4 +1,4 @@
 # Blogs
 
-* [Technical](./technical/README.md)
-* [Fun](./fun/REAMDE.md)
+* [Technical](blogs/technical/README.md)
+* [Fun](blogs/fun/REAMDE.md)
