@@ -8,7 +8,6 @@ I have also worked on the optimizing GPU algorithms by using shared memory and p
 
 # Experience
 ![Research Intern](https://img.shields.io/badge/research-intern-blue.svg?style=for-the-badge)
-
 **MPI-SWS, Germany** | March, 2017 - June, 2017
 
 Working on analyzing the temporal behavior of the linux Completely Fair Scheduler (CFS) for both general purpose and Real-Time systems with certain timing constraints.
@@ -16,7 +15,6 @@ Working on analyzing the temporal behavior of the linux Completely Fair Schedule
 **Publications** : Coming Soon!
 
 ![Research Intern](https://img.shields.io/badge/research-intern-blue.svg?style=for-the-badge)
-
 **NTU, Singapore** | Aug, 2016 - Jan, 2017
 
 Worked on simulation of many-core architecture architectures for lifetime reliability and scheduling optimization. Built a robust and multi-purpose tool (LifeSim) to analyze and optimize lifetime reliability of a many-core system under periodic and non-periodic workloads.
@@ -31,7 +29,6 @@ Worked on simulation of many-core architecture architectures for lifetime reliab
     Vijeta Rathore, Vivek Chaturvedi, Amit Kumar Singh, Thambipillai Srikanthan, **Rohith R**, Lam Siew Kei, Muhammad Shafique IEEE Design, Automation and Test in Europe (DATE), Dresden, Germany, March 2018. (accepted)
 
 ![Research Intern](https://img.shields.io/badge/software--dev-intern-blue.svg?style=for-the-badge)
-
 **Intuit** | May, 2016 - July, 2017
 
 Worked on the flagship product [Turbotax](https://turbotax.intuit.com/) integrated emerging technologies like android-N and Firebase in to the app architecture. Pitched the use of multi-window in android-N to [Google](https://www.google.com/), Mountain View team for review. Won 1st prize in the all Intuit hackathon. Developed a AI and ML based bot which talks to you and solves your problems.
