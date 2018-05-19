@@ -1,1 +1,2 @@
-# About
+# About Me
+I was a research intern at the [Max Planck Institute for Software Systems (MPI-SWS), Germany](https://www.mpi-sws.org/). My advisor was [Björn B. Brandenburg](https://people.mpi-sws.org/~bbb/), head of the Real-Time Systems Group. Prior to joining MPI-SWS, I was a research intern doing my undergraduate thesis at [NTU, Singapore](http://www.ntu.edu.sg/Pages/home.aspx). My advisors were [Lam Siew Kei](http://www.ntu.edu.sg/home/assklam/) and [Vivek Chaturvedi](http://www.ntu.edu.sg/home/vchaturvedi/). I completed my undergraduate studies in computer science from [Birla Institute of Technology and Science (BITS Pilani), Goa Campus, India](http://www.bits-pilani.ac.in/).
