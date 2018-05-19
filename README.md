@@ -33,7 +33,7 @@ Worked on simulation of many-core architecture architectures for lifetime reliab
 
 Worked on the flagship product [Turbotax](https://turbotax.intuit.com/) integrated emerging technologies like android-N and Firebase in to the app architecture. Pitched the use of multi-window in android-N to [Google](https://www.google.com/), Mountain View team for review. Won 1st prize in the all Intuit hackathon. Developed a AI and ML based bot which talks to you and solves your problems.
 
-## Opensource Projects
+# Opensource Projects
 - [BITS-OS](https://github.com/Mutinifni/BITS_OS) : A hobby kernel developed during 2nd year. Keyboard, display, clock drivers along with mini-shell.
 - [MIT-JOS](https://pdos.csail.mit.edu/6.828/2014/) : Contributed to MIT-JOS to add features like Memory Management using Paging and Segmentation and Process Management.
 - [VLIW-Architecture](https://github.com/nisargshah95/Comp-Arch-Project) : A working implementation of VLIW architecture based on MIPS architecture and ARM thumb ISA.
@@ -41,7 +41,7 @@ Worked on the flagship product [Turbotax](https://turbotax.intuit.com/) integrat
 - [Data Structures Library](https://github.com/MadaraUchiha-314/Data-Structures-Library) : A mini STL library in C++ with implementations some of the basic data-structures.
 - [cfat](https://github.com/MadaraUchiha-314/codeforces-auto-tester) : A simple tool to help you save time during a codeforces contest.
 
-## Services
+# Services
 - **Teaching Assistant** : Data Structures and Algorithms (BITS Pilani, Goa Campus, Spring 2016)
 
 - **Instructor** : [Operating System from Scratch](https://github.com/MadaraUchiha-314/TIP-OSFS) (TIP, Fall 2015), [Into. to Competitive Coding](http://bits-tip.github.io/) (TIP, Fall 2014 & Spring 2015)
