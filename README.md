@@ -1,2 +1,7 @@
 # About Me
 I was a research intern at the [Max Planck Institute for Software Systems (MPI-SWS), Germany](https://www.mpi-sws.org/). My advisor was [Björn B. Brandenburg](https://people.mpi-sws.org/~bbb/), head of the Real-Time Systems Group. Prior to joining MPI-SWS, I was a research intern doing my undergraduate thesis at [NTU, Singapore](http://www.ntu.edu.sg/Pages/home.aspx). My advisors were [Lam Siew Kei](http://www.ntu.edu.sg/home/assklam/) and [Vivek Chaturvedi](http://www.ntu.edu.sg/home/vchaturvedi/). I completed my undergraduate studies in computer science from [Birla Institute of Technology and Science (BITS Pilani), Goa Campus, India](http://www.bits-pilani.ac.in/).
+
+# Research Interests
+I am broadly interested in **Operating Systems**, **Computer Architecture**, and **High Performance Computing**. At Max Plank, I am working on analyzing the temporal behavior of the linux **Completely Fair Scheduler (CFS)** for both general purpose and Real-Time systems with certain timing constraints. During my undergraduate thesis, I built a reliability analysis tool for many-core systems (LifeSim) to study and analyze the behavior of large systems under real workloads.
+
+I have also worked on the optimizing GPU algorithms by using shared memory and providing abstractions for the widely popular C++ library Thrust in collaboration with [Prof. Santonu Sarkar](http://www.bits-pilani.ac.in/goa/santonus/profile) and [Sayantan Mitra](https://www.linkedin.com/in/mitrasayantan/) from **Siemens Research**.
