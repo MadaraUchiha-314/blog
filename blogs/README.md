@@ -1,0 +1,4 @@
+# blogs
+
+* [Fun]()
+* [Technical]()
