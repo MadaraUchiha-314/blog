@@ -134,7 +134,7 @@ Contains some of the interesting topics that I have explored during this blog.
 >These are tests that seem to work well in practice, but are unproven and therefore are not, technically speaking, algorithms at all. The Fermat test and the Fibonacci test are simple examples, and they are very effective when combined. John Selfridge has conjectured that if p is an odd number, and p ≡ ±2 (mod 5), then p will be prime if both of the following hold:
 2<sup>(p−1)</sup> ≡ 1 (mod p)
 f<sub>p+1</sub> ≡ 0 (mod p)
-where f<sub>k</sub> is the k-th Fibonacci number
+where f<sub>k</sub> is the k-th Fibonacci number.
 
 [Hardy-Ramanujan number]: https://en.wikipedia.org/wiki/1729_(number)
 [test the primality]: https://en.wikipedia.org/wiki/Primality_test
