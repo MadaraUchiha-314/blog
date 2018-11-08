@@ -94,7 +94,7 @@ Unaccepted strings are :
 - pq
 
 <div align="center" >
-    <img src="FSM-Regex.svg" />
+    <img src="/blogs/fun/NTC/FSM-Regex.svg" />
 </div>
 
 The state machine goes to the **accepted** state **D** when it finds a string which matches the regex.
