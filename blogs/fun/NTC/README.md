@@ -94,7 +94,7 @@ Unaccepted strings are :
 - pq
 
 <div align="center" >
-    <img src="blogs/fun/NTC/FSM-Regex.svg" />
+    <img src="https://svgshare.com/i/9HC.svg" />
 </div>
 
 The state machine goes to the **accepted** state **D** when it finds a string which matches the regex.
@@ -107,7 +107,7 @@ Clearly not! If these finite state machines could solve all our needs then why h
 Let's try to build a regular expression for accepting strings like `aabb`, `aaabbb`, `aaaabbbb` etc. More specifically of the form a<sup>n</sup> b<sup>n</sup>.
 
 <div align="center" >
-    <img src="Non-Regex-FSM.svg" />
+    <img src="https://svgshare.com/i/9Dq.svg" />
 </div>
 
 Is the above FSM a correct representation of the machine that accepts a<sup>n</sup> b<sup>n</sup>. Nope! It accepts strings of the form `a+b+`.
