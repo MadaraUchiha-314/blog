@@ -238,6 +238,17 @@ But one might be surprised to know that the grammar we just saw can handle this 
     <img src="https://i.imgflip.com/2m51me.jpg" />
 </div>
 
+<div align="center">
+    <img src="https://i.imgflip.com/2m5klx.jpg" />
+</div>
+
+
+<b>Just as we were thinking CFG's are awesome, we realize that they are also not powerful enough to generate string of the format a<sup>n</sup> b<sup>n</sup> c<sup>n</sup>.</b>
+
+It's kind of impossible to believe it at first. A parser that can parse (almost) every C program in the world can't recognize strings of the form a<sup>n</sup> b<sup>n</sup> c<sup>n</sup>.
+
+Let's try to get an intuition on why this is not possible using PDA's.
+
 ## Turing Machines
 
 ## Quantum Computing
