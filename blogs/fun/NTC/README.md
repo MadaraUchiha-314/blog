@@ -177,23 +177,25 @@ This means that we can relace `S` with `aSb` or `ab` or `ε` (empty string). It 
 
 Let's look at another interesting grammar.
 
-S --> SS | () | ε
+S --> SS | (S) | ε
 
 What do you think does this grammar produce ?
 
 Let's generate some strings and try.
 ```
 S --> SS # Using 1st rule
-S --> ()S # Using 2nd rule on 1st S
-S --> () # Using 3rd rule on the remaining S
+S --> (S)S # Using 2nd rule on leftmost S
+S --> ()S # Using 3rd rule on leftmost S
+S --> () # Using 3rd rule on the leftmost S
 ```
 
 So we have got `()`. Interesting. What else can we generate ?
 ```
 S --> SS # Using 1st rule
-S --> (S)S
-S --> (())S
-S --> (())()
+S --> (S)S # Using 2nd rule on leftmost S
+S --> ((S))S # Using 2nd rule on leftmost S
+S --> (())S # Using 3rd rule on the leftmost S
+S --> (())() # Using 3rd rule on the leftmost S
 ```
 So we have got `(())()`.
 
@@ -212,10 +214,10 @@ function_definition
 
 Looks scary at first, but given some time its pretty trivial for any one who has written C code to abstract this out and understand this. Let me give it a shot. Let's look at the 1st and the mot complex part `declaration_specifiers declarator declaration_list compound_statement`.
 
-[declaration_specifiers] - Maps to stuff like `extern`, `typedef` and also to [type-specifier]'s like `int` `float` etc.
-[declarator] - Maps to the function name. Can be a complex function pointer also.
-[declaration_list] - Maps to the arguments.
-[compound_statement] - Maps to the function body.
+- [declaration_specifiers] - Maps to stuff like `extern`, `typedef` and also to [type-specifier]'s like `int` `float` etc.
+- [declarator] - Maps to the function name. Can be a complex function pointer also.
+- [declaration_list] - Maps to the arguments.
+- [compound_statement] - Maps to the function body.
 
 ```C
 extern int add(int a, int b) {
