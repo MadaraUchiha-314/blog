@@ -120,6 +120,35 @@ Using the [Pumping Lemma] and after hours of disappointment we can prove that th
 Intuition says that we are not able to keep track of the count and we need some way to do that. We need something like a variable(s) to store information. This brings us to our next model of computing : Push Down Automata.
 
 ## Push Down Automata
+<div align="center">
+    <img src="https://i.imgflip.com/2m3pvn.jpg" title="made at imgflip.com"/>
+</div>
+
+The return of definitions :
+>A finite state machine just looks at the input signal and the current state: it has no stack to work with. It chooses a new state, the result of following the transition. A pushdown automaton (PDA) differs from a finite state machine in two ways:
+
+>1. It can use the top of the stack to decide which transition to take.
+>2. It can manipulate the stack as part of performing a transition.
+
+> A pushdown automaton reads a given input string from left to right. In each step, it chooses a transition by indexing a table by input symbol, current state, and the symbol at the top of the stack. A pushdown automaton can also manipulate the stack, as part of performing a transition. The manipulation can be to push a particular symbol to the top of the stack, or to pop off the top of the stack. The automaton can alternatively ignore the stack, and leave it as it is.
+
+>Put together: Given an input symbol, current state, and stack symbol, the automaton can follow a transition to another state, and optionally manipulate (push or pop) the stack.
+
+<div align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Pushdown-overview.svg" />
+</div>
+
+So what do we do with this stack ? We do not yet realize the power that we have got. First things first, we try to solve the problem that Finite State Automata could not.
+
+Let's try to get our automata to accept a<sup>n</sup> b<sup>n</sup>.
+
+An greedy way to solve this is to keep adding all the **a**'s to the stack and pop one **a** for each **b** that we encounter. At the end of the process if the stack is empty we have a correct string. Hmmn, looks correct doesn't it ?
+
+Will it accept `aabb`. Yes. Will it also accept `abab` or `abba`. Ohh, now we realize that even a small mistake in specification our how our PDA works can lead to incorrect results. We have in a way introduced a bug in our program and we have not even started writing code.
+
+So to fix this bug, we add a condition that we don't push **a**'s to the stack after we encounter a **b**.
+
+It is interesting to see what all can be done using Push Down Automata's. For us to get a sense on how powerful PDA's are we have to delve into the world of context-sensitive and context-free grammar's.
 
 ## Turing Machines
 
