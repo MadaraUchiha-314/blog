@@ -1,6 +1,6 @@
 # Non-Turning Computation ?
 Whats 19*91 ? Anyone who knows a bit about multiplication can tell that its 1729 (this also happens to be the [Hardy-Ramanujan number]). We humans do a lot of such computations every day.
-> 50% discount on orders above 300 on Zomato.
+> 50% discount on rides above 300 on Uber.
 
 Our brain is wired to compute the price of an item listed with the given constraint and find out the best choice.
 
@@ -94,7 +94,7 @@ Unaccepted strings are :
 - pq
 
 <div align="center" >
-    <img src="https://svgshare.com/i/9HC.svg" />
+    <img src="https://i.imgur.com/Yl8w2BK.png" />
 </div>
 
 The state machine goes to the **accepted** state **D** when it finds a string which matches the regex.
@@ -107,7 +107,7 @@ Clearly not! If these finite state machines could solve all our needs then why h
 Let's try to build a regular expression for accepting strings like `aabb`, `aaabbb`, `aaaabbbb` etc. More specifically of the form a<sup>n</sup> b<sup>n</sup>.
 
 <div align="center" >
-    <img src="https://svgshare.com/i/9Dq.svg" />
+    <img src="https://i.imgur.com/ZyWLawP.png" />
 </div>
 
 Is the above FSM a correct representation of the machine that accepts a<sup>n</sup> b<sup>n</sup>. Nope! It accepts strings of the form `a+b+`.
@@ -300,10 +300,39 @@ To really appreciate the genius of Alan Turing, we have to understand that there
 
 So if all modern computing is based on a Turing Machine, then what can't it solve ?
 
+#### The dreaded [Halting Problem] :
+> In computability theory, the halting problem is the problem of determining, from a description of an arbitrary computer program and an input, whether the program will finish running (i.e., halt) or continue to run forever.
 
-## Quantum Computing
+Proof by Paradox 😎 :
+```python
+def g():
+    if halts(g):
+        loop_forever()
+```
+
+As simple as that definition is the problem itself. There is no algorithm to determine if a program will halt or continue to run forever given all possible programs and inputs. Most of this comes from the fact that in a Turing Machine we are not constrained by Memory or Time. We have all the memory we want (in a random access fashion) and all the time we want to compute.
+
+For eg. we send a HTTP GET request to a server and we are expecting some data back. How do we know that the server has responded and our data is on its way or not ? This is my imagination of what a halting problem would look like in real life. Well, what do we then ? We put a timeout and after that we assume something is gone wrong. This is good enough for all practical purposes but this adds an additional constraint to our machine which was not there in the original Turing Machine and hence this machine is not as computationally powerful as the Turing machine.
+
+One takeaway question which is still unanswered is, **Is the halting problem solvable in some other model of computation which is as powerful as a Turing Machine ?**
+
+<div align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Automata_theory.svg/600px-Automata_theory.svg.png" />
+</div>
 
 ## Other Models
+
+There are some other models that are currently under research :
+- [Quantum Computing]
+- [DNA Computing]
+
+The problem is that we are striving for speed in most of these cases which the Turing Model doesn't care at all.
+
+>There are many kinds of computation that differ from those modeled by a Turing machine. Consider analog computers, neural nets, protein regulation, quantum computing to name a few. Tempers only flair when one is argued to be faster than another.
+
+[This article sheds light on some of the myths regarding Non-Turing Computing].
+
+Also there is this field of [Hyper Computation] which deals with problems that are intractable in the Turing Model.
 
 ## Appendix
 
@@ -339,3 +368,8 @@ where f<sub>k</sub> is the k-th Fibonacci number.
 [Informal Definition in Wikipedia]: https://en.wikipedia.org/wiki/Turing_machine#Informal_description
 [Turing Complete]: https://en.wikipedia.org/wiki/Turing_completeness
 [One Instruction Set Computer]: https://en.wikipedia.org/wiki/One_instruction_set_computer
+[Halting Problem]: https://en.wikipedia.org/wiki/Halting_problem
+[DNA Computing]: https://en.wikipedia.org/wiki/DNA_computing
+[Quantum Computing]: https://en.wikipedia.org/wiki/Quantum_computing
+[This article sheds light on some of the myths regarding Non-Turing Computing]: http://wiki.c2.com/?NonTuringComputing
+[Hyper Computation]: https://en.wikipedia.org/wiki/Hypercomputation
