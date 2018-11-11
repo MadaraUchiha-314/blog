@@ -10,7 +10,7 @@ Is the below number prime ?
 759301153995587786295940234337835566939818242933338764992626636151840060018287495175071640381085598621485324153512723306029347944398765220195985610285655148360429689570446991855700752025872155835192912833873171105200576475258000980674946417119578990569901912595362864383826160631207564428245219788870979717427639960592692739718067446610883944074742923064162539957869762709941009094660335117010525554194337335483429829570293294530317689382387199365645018871418582530303530942736407739032184541272768141863716754690767416741919411494261600447044209989519846225463497405337399025250428219525640436125838929594312133227
 ```
 
-We quickly realize that the problem has escalated and we need more powerful methods than our handy mobile app calculator to tell the answer. Although there are some fancy algorithms to [test the primality] of a number, but most of them require some amount of non-trivial computing.
+We quickly realize that the problem has escalated in complexity and we need more powerful methods than our handy mobile app calculator to tell the answer. Although there are some fancy algorithms to [test the primality] of a number, but most of them require some amount of non-trivial computing.
 
 Humans soon found the need for inventing devices to help with such hard arithmetic operations and hence came to be the [calculator].
 
@@ -58,7 +58,7 @@ So what all things do we need apart from an adder or a mathematical calculator t
 We humans do very complex string matching which enables us to do a variety of interesting tasks, one of which is reading this very blog. It's interesting that our brain not only does text-matching in trivial ways, but also in some non-trivial and non-intuitive ways. Let's try to read this [piece of text].
 >Aoccdrnig to a study at an Elingsh uinervtisy, it deosn't mttaer in waht oredr the ltteers in a wrod are, the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae. The rset can be a toatl mses and you can sitll raed it wouthit porbelm. Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe.
 
-There are varied application of text-matching ranging from [DNA Profiling], [Google Search] which powers the web and [Parsers] which lets us write and compile/interpret these wonderful pieces of code that we write.
+There are varied application of text-matching ranging from [DNA Profiling], [Google Search] which powers the web and [Parsers] which lets us write and compile/interpret these wonderful pieces of code that we execute.
 
 [Regex] matching has become the bread and butter of computer science. Let's try to get an insight on how computers do it.
 
@@ -93,13 +93,17 @@ Unaccepted strings are :
 - pqqr
 - pq
 
+Let's try to build a state-machine for this.
+
 <div align="center" >
     <img src="https://i.imgur.com/Yl8w2BK.png" />
 </div>
 
+Inititally we are in state `A`. When we find a `p` we move to state `B` and stay there as long we get `p` and then we move to state `C` when we get an `Q` and finally to state `D` when we get `R`.
+
 The state machine goes to the **accepted** state **D** when it finds a string which matches the regex.
 
-It can be mathematically proven that all regular expressions can be converted to a finite state-automate and there are many libraries that do these very well like the one discussed in [Regex to automata].
+It can be mathematically proven that all regular expressions can be converted to a finite state-automata and there are many libraries that do these very well like the one discussed in [Regex to automata].
 
 #### So, is finite state machine the end of the world ?
 Clearly not! If these finite state machines could solve all our needs then why haven't we still colonized Mars ?
@@ -113,7 +117,7 @@ Let's try to build a regular expression for accepting strings like `aabb`, `aaab
 Is the above FSM a correct representation of the machine that accepts aⁿ bⁿ. Nope! It accepts strings of the form `a+b+`.
 
 We want the number of **a**'s to equal number of **b**'s. But how do we count using an FSM ?
-Are we not smart enough enough to build one yet or there is an inherent limitation in Finite State Automata that it cannot do these kinds of computations.
+Are we not smart enough to build one yet or there is an inherent limitation in Finite State Automata that it cannot do these kinds of computations.
 
 Using the [Pumping Lemma] and after hours of disappointment we can prove that this is indeed beyond the reach of FSM's.
 
@@ -144,7 +148,7 @@ Let's try to get our automata to accept aⁿ bⁿ.
 
 An greedy way to solve this is to keep adding all the **a**'s to the stack and pop one **a** for each **b** that we encounter. At the end of the process if the stack is empty we have a correct string. Hmmn, looks correct doesn't it ?
 
-Will it accept `aabb`. Yes. Will it also accept `abab` or `abba`. Ohh, now we realize that even a small mistake in specification our how our PDA works can lead to incorrect results. We have in a way introduced a bug in our program and we have not even started writing code.
+Will it accept `aabb`. Yes. Will it also accept `abab` or `abba`. Ohh, now we realize that even a small mistake in specification our how our PDA works can lead to incorrect results. **We have in a way introduced a bug in our program and we have not even started writing code.**
 
 So to fix this bug, we add a condition that we don't push **a**'s to the stack after we encounter a **b**.
 
