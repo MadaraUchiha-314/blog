@@ -24,7 +24,7 @@ Worked on simulation of many-core architecture architectures for lifetime reliab
 - [LifeSim: A Lifetime Reliability Simulator for Manycore Systems](http://ieeexplore.ieee.org/document/8301711/)
 
     **Rohith R**, Vijeta Rathore, Vivek Chaturvedi, Amit Kumar Singh, Thambipillai Srikanthan, Lam Siew Kei. IEEE Annual Computing and Communication Workshop and Conference (CCWC), Las Vegas, NV, USA, January 2018.
-- [HiMap: A Hierarchical Mapping Approach for Enhancing Lifetime Reliability of Dark Silicon Manycore Systems](https://www.date-conference.com/proceedings-archive/2018/html/0711.html)
+- [HiMap: A Hierarchical Mapping Approach for Enhancing Lifetime Reliability of Dark Silicon Manycore Systems](https://ieeexplore.ieee.org/document/8342153)
 
     Vijeta Rathore, Vivek Chaturvedi, Amit Kumar Singh, Thambipillai Srikanthan, **Rohith R**, Lam Siew Kei, Muhammad Shafique IEEE Design, Automation and Test in Europe (DATE), Dresden, Germany, March 2018. (accepted)
 
