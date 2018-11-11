@@ -300,6 +300,7 @@ To really appreciate the genius of Alan Turing, we have to understand that there
 
 So if all modern computing is based on a Turing Machine, then what can't it solve ?
 
+
 ## Quantum Computing
 
 ## Other Models
