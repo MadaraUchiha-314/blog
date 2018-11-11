@@ -249,12 +249,56 @@ It's kind of impossible to believe it at first. A parser that can parse (almost)
 
 Let's try to get an intuition on why this is not possible using PDA's. The inherent problem when we are trying to solve this with a single stack is that we are not able to count twice. We are **limited by the model of our memory i.e. stack**.
 
-Let's try to solve this with 2 stacks instead of 1. With some playing around, we ca come up with this scheme :
+Let's try to solve this with 2 stacks instead of 1. With some playing around, we can come up with this scheme :
 - When we encounter an **a** we push it to the first stack. When we encounter a **b**, we pop **a** from the 1st stack and simultaneously push **b** to the 2nd stack. Once we start seeing **c**'s we pop **b**'s. If both the stacks are empty then we have identified our string a<sup>n</sup> b<sup>n</sup> c<sup>n</sup>. I have certainly omitted some details but the crux of the idea remains the same.
 
 We must not fall into this trap of adding more stacks or making tweaks to solve the problem at hand. What we are looking for is a model of computation that can solve a whole class of problems. It can be easily verified that the 2-stack PDA cannot accept strings of the form a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> d<sup>n</sup>. For that we need 3 stacks. When we generalize this idea, we see that we require many stacks and the collection of stacks are behaving like a [Random-Access-Memory]. This brings us to perhaps the most important discovery in the field of computer science, the **Turning Machine**.
 
 ## Turing Machines
+
+There are many definitions/versions of Turing Machine and all of them are proven to have the same computational capability. We are going to look at one such version. This is a tweaked version of [Informal Definition in Wikipedia].
+
+Turing Machine consists of :
+
+- An infinite tape that consists of alphabets. The staring of the tape has a special symbol say `$` and apart from the input string which starts just after the `$`, the all the cells of the tape have a blank symbol `0` on it.
+- A head that can read/write and symbol in the alphabet from/onto the tape. The head can also move along the tape, but not left to the $ symbol.
+- A state register, which contains the current state of the Turing machine. One of the state is a starting state and one or more of them can be a final state.
+- A table of transitions which are like the instructions for the machine on what to do. All 3 are performed in this order.
+    - Write a symbol on the current head. (Can be the blank `0` also)
+    - Move the head, to the right or left.
+    - Write a state to a state register. (Can be same as the current state)
+
+Here is how it looks :
+
+![Turing Machine Image](https://i.imgur.com/2XIMafa.png)
+
+It contains the input `aaaabbbbcccc`. `Z` marks the end of the input string. Ok, let's now try to perform some operations to recognize strings of the form a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> with the example of a<sup>4</sup> b<sup>4</sup> c<sup>4</sup>
+
+NOTE: The solution I describe below is very crude and may not be theoretically correct (in the sense that it covers all the corner cases) but it should give the reader a good enough intuition on this machine works.
+
+Algorithm :
+- If we get an **a**, make is blank (`0`) and move right until we get a **b**.
+- If we get an **b**, make is blank (`0`) and move right until we get a **c**.
+- Go back until left-most **a** (Exercise for the reader on how to do this) and repeat.
+- If at the end (how do we define end ?), if all things are blank then the string is accepted.
+
+Wow! We have solved a problem that we have been trying since the origin of PDA's guess what, this same machine can be used for a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> d<sup>n</sup> also.
+
+<div align="center">
+    <img src="https://i.imgflip.com/2m9j29.jpg">
+</div>
+
+Since we have been falling for the same trick again and again, one would naturally ask, can this compute everything or is this blog going to go on forever ?
+
+Turns out that this too cannot compute everything. There are some problems that even Turing Machines cannot solve. But we will get to that later.
+
+To really appreciate the genius of Alan Turing, we have to understand that there were no computers in 1936. Even the transistor was invented in 1947. Turing proposed a model of computation that has stood the test of times. We still have not got a better model of computation than what was proposed over a century ago. Turing generalized the notion of computing and literally simplified it down to such a simple machine. All modern architectures strive to be [Turing Complete]. All programming languages try to be [Turing Complete].
+
+> In computability theory, a system of data-manipulation rules (such as a computer's instruction set, a programming language, or a cellular automaton) is said to be Turing complete or computationally universal if it can be used to simulate any Turing machine. The concept is named after English mathematician and computer scientist Alan Turing. A classic example is lambda calculus.
+
+**Another interesting read is how many instructions are required in an Instruction Set Architecture to be be Turing Complete. It turns out that the answer is ONE.** [One Instruction Set Computer].
+
+So if all modern computing is based on a Turing Machine, then what can't it solve ?
 
 ## Quantum Computing
 
@@ -291,3 +335,6 @@ where f<sub>k</sub> is the k-th Fibonacci number.
 [declaration_list]: https://www.lysator.liu.se/c/ANSI-C-grammar-y.html#declaration-list
 [compound_statement]: https://www.lysator.liu.se/c/ANSI-C-grammar-y.html#compound-statement
 [Random-Access-Memory]: https://en.wikipedia.org/wiki/Random-access_memory
+[Informal Definition in Wikipedia]: https://en.wikipedia.org/wiki/Turing_machine#Informal_description
+[Turing Complete]: https://en.wikipedia.org/wiki/Turing_completeness
+[One Instruction Set Computer]: https://en.wikipedia.org/wiki/One_instruction_set_computer
