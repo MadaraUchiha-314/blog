@@ -25,9 +25,9 @@ Humans soon found the need for inventing devices to help with such hard arithmet
         </td>
         <td>
             <img
-                src="https://www.imore.com/sites/imore.com/files/styles/xlarge/public/field/image/2017/05/calculator-app-scientific-mode-landscape-portrait.jpg"
+                src="https://cms.qz.com/wp-content/uploads/2017/10/ios-11-iphone-claculator.png"
                 height="400px"
-                width="550px"
+                width="600px"
             />
         </td>
     </tr>
