@@ -34,6 +34,8 @@ Worked on simulation of many-core architecture architectures for lifetime reliab
 Worked on the flagship product [Turbotax](https://turbotax.intuit.com/) integrated emerging technologies like android-N and Firebase in to the app architecture. Pitched the use of multi-window in android-N to [Google](https://www.google.com/), Mountain View team for review. Won 1st prize in the all Intuit hackathon. Developed a AI and ML based bot which talks to you and solves your problems.
 
 # Opensource Projects
+- [LifeSim](https://github.com/MadaraUchiha-314/LifeSim) : A Lifetime Reliability Simulator for Manycore Systems.
+- [auto-unit-test](https://github.com/MadaraUchiha-314/auto-unit-test) : No writing unit tests again!
 - [BITS-OS](https://github.com/Mutinifni/BITS_OS) : A hobby kernel developed during 2nd year. Keyboard, display, clock drivers along with mini-shell.
 - [MIT-JOS](https://pdos.csail.mit.edu/6.828/2014/) : Contributed to MIT-JOS to add features like Memory Management using Paging and Segmentation and Process Management.
 - [VLIW-Architecture](https://github.com/nisargshah95/Comp-Arch-Project) : A working implementation of VLIW architecture based on MIPS architecture and ARM thumb ISA.
