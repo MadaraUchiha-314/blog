@@ -1,4 +1,4 @@
 # Summary
 
 * [Who is this ?](README.md)
-* [Non-Turing-Computation](NTC.md)
+* [BLOG/Non-Turing-Computation](NTC.md)
