@@ -247,7 +247,12 @@ But one might be surprised to know that the grammar we just saw can handle this 
 
 It's kind of impossible to believe it at first. A parser that can parse (almost) every C program in the world can't recognize strings of the form a<sup>n</sup> b<sup>n</sup> c<sup>n</sup>.
 
-Let's try to get an intuition on why this is not possible using PDA's.
+Let's try to get an intuition on why this is not possible using PDA's. The inherent problem when we are trying to solve this with a single stack is that we are not able to count twice. We are **limited by the model of our memory i.e. stack**.
+
+Let's try to solve this with 2 stacks instead of 1. With some playing around, we ca come up with this scheme :
+- When we encounter an **a** we push it to the first stack. When we encounter a **b**, we pop **a** from the 1st stack and simultaneously push **b** to the 2nd stack. Once we start seeing **c**'s we pop **b**'s. If both the stacks are empty then we have identified our string a<sup>n</sup> b<sup>n</sup> c<sup>n</sup>. I have certainly omitted some details but the crux of the idea remains the same.
+
+We must not fall into this trap of adding more stacks or making tweaks to solve the problem at hand. What we are looking for is a model of computation that can solve a whole class of problems. It can be easily verified that the 2-stack PDA cannot accept strings of the form a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> d<sup>n</sup>. For that we need 3 stacks. When we generalize this idea, we see that we require many stacks and the collection of stacks are behaving like a [Random-Access-Memory]. This brings us to perhaps the most important discovery in the field of computer science, the **Turning Machine**.
 
 ## Turing Machines
 
@@ -285,3 +290,4 @@ where f<sub>k</sub> is the k-th Fibonacci number.
 [declarator]: https://www.lysator.liu.se/c/ANSI-C-grammar-y.html#declarator
 [declaration_list]: https://www.lysator.liu.se/c/ANSI-C-grammar-y.html#declaration-list
 [compound_statement]: https://www.lysator.liu.se/c/ANSI-C-grammar-y.html#compound-statement
+[Random-Access-Memory]: https://en.wikipedia.org/wiki/Random-access_memory
