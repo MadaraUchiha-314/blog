@@ -35,7 +35,11 @@ Worked on the flagship product [Turbotax](https://turbotax.intuit.com/) integrat
 
 # Opensource Projects
 - [LifeSim](https://github.com/MadaraUchiha-314/LifeSim) : A Lifetime Reliability Simulator for Manycore Systems.
-- [auto-unit-test](https://github.com/MadaraUchiha-314/auto-unit-test) : No writing unit tests again!
+- [auto-unit-test](https://github.com/MadaraUchiha-314/auto-unit-test) : No writing unit tests again! Auto-Generating unit tests without any extra code or funny annotations.
+- [automation-for-humans](https://github.com/intuit/automation-for-humans) : Converts english to automation.
+    - Sub Projects :
+        - [dsl-for-humans](https://github.com/automation-for-humans/dsl) : A custom compiler for [automation-for-humans](https://github.com/intuit/automation-for-humans) written in C++ using lex and yacc.
+        - [docker-for-humans](https://github.com/automation-for-humans/docker-image) : An optimized docker image for  [automation-for-humans](https://github.com/intuit/automation-for-humans)
 - [BITS-OS](https://github.com/Mutinifni/BITS_OS) : A hobby kernel developed during 2nd year. Keyboard, display, clock drivers along with mini-shell.
 - [MIT-JOS](https://pdos.csail.mit.edu/6.828/2014/) : Contributed to MIT-JOS to add features like Memory Management using Paging and Segmentation and Process Management.
 - [VLIW-Architecture](https://github.com/nisargshah95/Comp-Arch-Project) : A working implementation of VLIW architecture based on MIPS architecture and ARM thumb ISA.
