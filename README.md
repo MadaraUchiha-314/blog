@@ -1,5 +1,5 @@
 # About Me
-I am an engineer at Intuit working on [Mint.com](https://www.mint.com/) and in the past worked on [TurboTax](https://turbotax.intuit.com/).
+I am an engineer at Intuit working on [Mint](https://www.mint.com/) and in the past worked on [TurboTax](https://turbotax.intuit.com/).
 
 I was a research intern at the [Max Planck Institute for Software Systems (MPI-SWS), Germany](https://www.mpi-sws.org/). My advisor was [Björn B. Brandenburg](https://people.mpi-sws.org/~bbb/), head of the Real-Time Systems Group. Prior to joining MPI-SWS, I was a research intern doing my undergraduate thesis at [NTU, Singapore](http://www.ntu.edu.sg/Pages/home.aspx). My advisors were [Lam Siew Kei](http://www.ntu.edu.sg/home/assklam/) and [Vivek Chaturvedi](http://www.ntu.edu.sg/home/vchaturvedi/). I completed my undergraduate studies in computer science from [Birla Institute of Technology and Science (BITS Pilani), Goa Campus, India](http://www.bits-pilani.ac.in/).
 
@@ -26,7 +26,7 @@ Co-created [Fawkes](https://github.com/intuit/fawkes), an open-source platform t
 - 🏆 Received Consumer Group Engineering Excellence Award
 - 🎖️ Received Intuit India Super Star Award
 
-Globalised Mint.com to work for any country. Worked though 4 different tech stacks - [React](https://reactjs.org/), [Backbone](https://backbonejs.org/), [YUI](https://clarle.github.io/yui3/) and [XMLC](https://www.linuxjournal.com/article/4783), to remove all the hard-coded currency, localisation information and make the prodcut global ready.
+Globalised Mint.com to work for any country. Worked through 4 different tech stacks - [React](https://reactjs.org/), [Backbone](https://backbonejs.org/), [YUI](https://clarle.github.io/yui3/) and [XMLC](https://www.linuxjournal.com/article/4783), to remove all the hard-coded currency, localisation information and make the prodcut global ready.
 
 ![Software Engineer](https://img.shields.io/badge/Software-Engineer-blue.svg?style=for-the-badge)
 **TurboTax, Intuit** | Aug, 2017 - Feb, 2019
