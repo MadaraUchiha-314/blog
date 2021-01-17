@@ -79,6 +79,7 @@ Let's find a solution which just does the job without worrying about optimality.
 8. Goto Step-5.
 9. Exit when C0 has no more blocks left. At this point C3 will have all blocks sorted.
 
+
 - It's not hard to see that this solution is a valid one. It pushes the next consecutive block into A everytime.
 - It's also not hard to see that this is a very slow solution. But let's see in the worst case how many pops and pushes we have to do in this algorithm.
 - In the worst case if all the elements are in reverse of sorted order, we have to do this operation at-most B times each time operating on B - i blocks in the i<sup>th</sup> iteration.
