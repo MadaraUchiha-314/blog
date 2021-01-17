@@ -65,7 +65,7 @@ So in the strategies that I am going to discuss below, it will most involve just
 2. Since we cannot push and pop into the same container, we need atleast 3 containers to solve this problem for the worst case.
 3. We need 1 container to hold the solution which is the final sorted array. This leaves us with 2 containers from where we push and pop the blocks.
 
-### A solution ✅
+## A solution ✅
 Let's find a solution which just does the job without worrying about optimality.
 
 1. Say we have B blocks distributed over N containers initially.
@@ -85,14 +85,14 @@ Let's find a solution which just does the job without worrying about optimality.
 - It's also not hard to see that this is a very slow solution. But let's see in the worst case how many pops and pushes we have to do in this algorithm.
 - In the worst case if all the elements are in reverse of sorted order, we have to do this operation at-most B times each time operating on B - i blocks in the i<sup>th</sup> iteration.
 
-### Why are we doing bad ?  💩
+## Why are we doing bad ?  💩
 In the original problem the number of blocks are fixed. **B = 1024**. In addition the number of containers are also from the set **N ∈ {16, 32, 64, 128 }**
 
 The problems with our current approach:
 1. We are able to sort only ONE block at at time. Can we sort multiple elements at a time ? Some sort of Divide and Conquer ?
 2. A lot of unnecessary blocks are being pushed and popped despite the fact that they are not relevant at the current moment in time. For eg. the block 750 is not going to be pushed into the solutions container nowhere in the first 749 iteration, so can we keep it stored somewhere and bring it back only when its time ?
 
-### Let's better our current approach ⏩
+## Let's better our current approach ⏩
 
 Let's try to solve the 1st problem in our solution. We do this by borrowing ideas from [Merge Sort] and [Quick Sort]. We divide and conquer using two different strategies:
 1. Sort sub-problems and merge. (Merge Sort)
@@ -104,7 +104,7 @@ Let's try to solve the 1st problem in our solution. We do this by borrowing idea
     2. We choose C2 as the **secondary container** (denoted as 🟡 from here on)
 2. Containers C3 - C8 (Blue color) are our "sorting" containers.
 
-#### The Merge Sort like approach
+### The Merge Sort like approach
 The key idea is to use multiple containers to keep the sorted portions of the whole set of blocks and then merge them.
 
 1. Let's use K = N - 2 blocks as the different containers for partial sorting.
@@ -115,7 +115,7 @@ This is how the intermediate state looks like for B = 16 and N = 8
 
 <img src="https://i.imgur.com/8k7jLms.png" />
 
-#### The Quick Sort like approach
+### The Quick Sort like approach
 Notice that in the Merge Sort appraoch, the containers C3 - C8 have all the elements sorted in them. The problem is that to get to this intermediate state it takes a lot of iterations. Block-7 can be inserted into C3 only after Block-1 is inserted.
 
 In quicksort partition, we don't care about the order of the elements itself while putting them into the "left" and the "right" partitions. Let's try to do that. This we can finish in a single iteration over all the blocks.
@@ -143,7 +143,7 @@ Both these approaches were trying to solve the divide and conquer problem that w
 
 Now let's try to solve the other problem that we had in our approach.
 
-### The problem of idle blocks 💤
+## The problem of idle blocks 💤
 Now that the Merge Sort based approach is doing better, let's try to solve the problem of higher numbered blocks being idle in the queues rather than reaching their destination quickly.
 
 Let's create some **buffer containers** where we temporarily store the higher numbered blocks instead of them shuffling in between the queues while we distribute.
@@ -156,12 +156,12 @@ Here C7 and C8 (Red colored) are buffer containers. We divide our data into (P +
 
 While the set **{1, 2, ..., 6}** is being sorted, the other 2 sets with higher valued blocks are lying idle in the buffer containers. This saves us a huge amount of cost of transferring them between C1 and C2 while sorting the lower valued blocks.
 
-### Choosing the number of buffer containers ? 📚
+## Choosing the number of buffer containers ? 📚
 Now that we have clearly seen the effects of adding in buffer containers, we need a strategy to choose the number of buffer containers.
 
 I tried values from 0 to min(32, N/2) and found that the best value for each N and each configuration was different but was lesser than 8 for the given instances of the problem. So the process of finding the optimal value of P (number of buffer containers) had to be ingrained in the program itself.
 
-### Choosing the right containers 📦
+## Choosing the right containers 📦
 Till now we haven't even taken into account the cost to push/pop a block from containers and haven't optimised on that front. A simple strategy here would be to use the heuristic of C<sub>i</sub> + D<sub>i</sub> as the the "goodness" of a container.
 
 We use the best containers as the "working" containers (the one indicated in Green and Yellow) which have the maximum elements pushed/popped into them so as to minimise the costs.
@@ -173,14 +173,14 @@ We use the next best containers for the buffer containers as they will see more 
 Another optimisation is to add blocks having bigger W<sub>i</sub> to containers having smaller C<sub>i</sub> + D<sub>i</sub> as this would minimise the product.
 
 
-### Queues vs Stacks
+## Queues vs Stacks
 Till now we have been using our containers as queues, but the solution that we have discussed till now doesn't require the container to be a queue. The exact same approach can work with all the containers as stacks as well.
 
 **Que:** Is there any optimisations that we can do here to choose which containers are queues or stacks based on the order of the elements appearing on the containers ?
 
 **Ans:** Probably Yes. But this is not something I had explored during the contest. Currently I don't have a good enough strategy to allocate stacks/queues to containers. Will update this post if I find one.
 
-### Some more optimisations 😅
+## Some more optimisations 😅
 
 1. We have been emptying containers in the beginning and putting them all in either of the 2 containers (green/yellow) to start the sorting process. This step can be skipped by maintaining which element was on the back of each queue initially and processing elements only till that time. **NOTE:** This requires that our blue containers are all queues, as if they were stacks, they would not be able to do this optimisation.
 2. Some blocks might already be present in buffer containers which they belong to. As we can't pop/push on the same container, we can use the primary container as a stack instead of a queue so that we can use it as a buffer/temporary storage and then push it back to the correct buffer container. This would be optimal as the primary container has the least cost of pushing and popping a block.
