@@ -102,7 +102,7 @@ Let's try to solve the 1st problem in our solution. We do this by borrowing idea
 1. Containers C<sub>1</sub> (Green) and C<sub>2</sub> (Yellow color) are our "working" containers which will be used to transfer blocks from one another.
     1. We chose C<sub>1</sub> as the **primary container** (denoted as 🟢 from here on)
     2. We choose C<sub>2</sub> as the **secondary container** (denoted as 🟡 from here on)
-2. Containers C<sub>3</sub> - C8 (Blue color) are our "sorting" containers.
+2. Containers C<sub>3</sub> - C<sub>8</sub> (Blue color) are our "sorting" containers.
 
 ### The Merge Sort like approach
 The key idea is to use multiple containers to keep the sorted portions of the whole set of blocks and then merge them.
@@ -116,7 +116,7 @@ This is how the intermediate state looks like for B = 16 and N = 8
 <img src="https://i.imgur.com/8k7jLms.png" />
 
 ### The Quick Sort like approach
-Notice that in the Merge Sort appraoch, the containers C<sub>3</sub> - C8 have all the elements sorted in them. The problem is that to get to this intermediate state it takes a lot of iterations. Block-7 can be inserted into C<sub>3</sub> only after Block-1 is inserted.
+Notice that in the Merge Sort appraoch, the containers C<sub>3</sub> - C<sub>8</sub> have all the elements sorted in them. The problem is that to get to this intermediate state it takes a lot of iterations. Block-7 can be inserted into C<sub>3</sub> only after Block-1 is inserted.
 
 In quicksort partition, we don't care about the order of the elements itself while putting them into the "left" and the "right" partitions. Let's try to do that. This we can finish in a single iteration over all the blocks.
 
@@ -124,7 +124,7 @@ This is how the intermediate state might looks like for B = 16 and N = 8
 
 <img src="https://i.imgur.com/QWMreH3.png" />
 
-Now we go through all the containers C<sub>3</sub> - C8 and sort them and put them into C<sub>0</sub>.
+Now we go through all the containers C<sub>3</sub> - C<sub>8</sub> and sort them and put them into C<sub>0</sub>.
 
 
 The Merge Sort based approach performs better than the Quick Sort based approach. I don't have a very solid reasoning for this, but here's my take on it.
@@ -152,7 +152,7 @@ If we have P = 2, K = 4, N = 8, B = 16 buffer containers, this is how things wou
 
 <img src="https://i.imgur.com/PE05xZQ.png" />
 
-Here C7 and C8 (Red colored) are buffer containers. We divide our data into (P + 1) roughly equal sets **{ 1, 2, ..., 6}** , **{ 7, 8, ..., 11 }**, **{ 12, ... , 16 }**.
+Here C<sub>7</sub> and C<sub>8</sub> (Red colored) are buffer containers. We divide our data into (P + 1) roughly equal sets **{ 1, 2, ..., 6}** , **{ 7, 8, ..., 11 }**, **{ 12, ... , 16 }**.
 
 While the set **{1, 2, ..., 6}** is being sorted, the other 2 sets with higher valued blocks are lying idle in the buffer containers. This saves us a huge amount of cost of transferring them between C<sub>1</sub> and C<sub>2</sub> while sorting the lower valued blocks.
 
