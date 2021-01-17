@@ -143,7 +143,7 @@ Both these approaches were trying to solve the divide and conquer problem that w
 
 Now let's try to solve the other problem that we had in our approach.
 
-#### The problem of idle blocks 💤
+### The problem of idle blocks 💤
 Now that the Merge Sort based approach is doing better, let's try to solve the problem of higher numbered blocks being idle in the queues rather than reaching their destination quickly.
 
 Let's create some **buffer containers** where we temporarily store the higher numbered blocks instead of them shuffling in between the queues while we distribute.
@@ -156,12 +156,12 @@ Here C7 and C8 (Red colored) are buffer containers. We divide our data into (P +
 
 While the set **{1, 2, ..., 6}** is being sorted, the other 2 sets with higher valued blocks are lying idle in the buffer containers. This saves us a huge amount of cost of transferring them between C1 and C2 while sorting the lower valued blocks.
 
-#### Choosing the number of buffer containers ? 📚
+### Choosing the number of buffer containers ? 📚
 Now that we have clearly seen the effects of adding in buffer containers, we need a strategy to choose the number of buffer containers.
 
 I tried values from 0 to min(32, N/2) and found that the best value for each N and each configuration was different but was lesser than 8 for the given instances of the problem. So the process of finding the optimal value of P (number of buffer containers) had to be ingrained in the program itself.
 
-#### Choosing the right containers 📦
+### Choosing the right containers 📦
 Till now we haven't even taken into account the cost to push/pop a block from containers and haven't optimised on that front. A simple strategy here would be to use the heuristic of C<sub>i</sub> + D<sub>i</sub> as the the "goodness" of a container.
 
 We use the best containers as the "working" containers (the one indicated in Green and Yellow) which have the maximum elements pushed/popped into them so as to minimise the costs.
@@ -173,20 +173,20 @@ We use the next best containers for the buffer containers as they will see more 
 Another optimisation is to add blocks having bigger W<sub>i</sub> to containers having smaller C<sub>i</sub> + D<sub>i</sub> as this would minimise the product.
 
 
-#### Queues vs Stacks
+### Queues vs Stacks
 Till now we have been using our containers as queues, but the solution that we have discussed till now doesn't require the container to be a queue. The exact same approach can work with all the containers as stacks as well.
 
 **Que:** Is there any optimisations that we can do here to choose which containers are queues or stacks based on the order of the elements appearing on the containers ?
 
 **Ans:** Probably Yes. But this is not something I had explored during the contest. Currently I don't have a good enough strategy to allocate stacks/queues to containers. Will update this post if I find one.
 
-#### Some more optimisations 😅
+### Some more optimisations 😅
 
 1. We have been emptying containers in the beginning and putting them all in either of the 2 containers (green/yellow) to start the sorting process. This step can be skipped by maintaining which element was on the back of each queue initially and processing elements only till that time. **NOTE:** This requires that our blue containers are all queues, as if they were stacks, they would not be able to do this optimisation.
 2. Some blocks might already be present in buffer containers which they belong to. As we can't pop/push on the same container, we can use the primary container as a stack instead of a queue so that we can use it as a buffer/temporary storage and then push it back to the correct buffer container. This would be optimal as the primary container has the least cost of pushing and popping a block.
 3. In the very first step for pushing all the "working" blocks to primary/secondary containers, we can always choose the block which is the smallest in front of all the queues and push that first. Smaller blocks at the front of the queue will help in faster placement of blocks.
 
-### Conclusion
+## Conclusion
 Overall it was a very interesting problem to solve and optimise. I learnt a lot during the contest while solving the problem and after the contest by looking at other people's solution which were better than mine. 
 
 The good thing about this problem is that it doesn't require knowledge of fancy data structure or algorithms to solve it. Stacks, Queues and Sorting. That's all!
