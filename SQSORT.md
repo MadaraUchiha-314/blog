@@ -57,7 +57,7 @@ For those who are here to see interesting strategies for this problem, I shall k
 
 Firstly I personally found it difficult to use stacks to solve this problem only to realise that the problem is more or less the same whether we use stacks or queues to find "a solution".
 
-So in the strategies that I am going to discuss below, it will most involve just using queues. So here we go.
+So in the strategies that I am going to discuss below, it will mostly involve just using queues. So here we go.
 
 **Some observations:**
 
@@ -185,6 +185,8 @@ Till now we have been using our containers as queues, but the solution that we h
 1. We have been emptying containers in the beginning and putting them all in either of the 2 containers (green/yellow) to start the sorting process. This step can be skipped by maintaining which element was on the back of each queue initially and processing elements only till that time. **NOTE:** This requires that our blue containers are all queues, as if they were stacks, they would not be able to do this optimisation.
 2. Some blocks might already be present in buffer containers which they belong to. As we can't pop/push on the same container, we can use the primary container as a stack instead of a queue so that we can use it as a buffer/temporary storage and then push it back to the correct buffer container. This would be optimal as the primary container has the least cost of pushing and popping a block.
 3. In the very first step for pushing all the "working" blocks to primary/secondary containers, we can always choose the block which is the smallest in front of all the queues and push that first. Smaller blocks at the front of the queue will help in faster placement of blocks.
+
+Here's my solution with more or less all the optimisations discussed above: https://www.codechef.com/viewsolution/41576033
 
 ## Conclusion
 Overall it was a very interesting problem to solve and optimise. I learnt a lot during the contest while solving the problem and after the contest by looking at other people's solution which were better than mine. 
