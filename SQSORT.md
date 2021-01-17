@@ -60,6 +60,7 @@ Firstly I personally found it difficult to use stacks to solve this problem only
 So in the strategies that I am going to discuss below, it will most involve just using queues. So here we go.
 
 **Some observations:**
+
 1. The problem is trivial when N > B
 2. Since we cannot push and pop into the same container, we need atleast 3 containers to solve this problem for the worst case.
 3. We need 1 container to hold the solution which is the final sorted array. This leaves us with 2 containers from where we push and pop the blocks.
