@@ -193,7 +193,7 @@ Overall it was a very interesting problem to solve and optimise. I learnt a lot 
 
 The good thing about this problem is that it doesn't require knowledge of fancy data structure or algorithms to solve it. Stacks, Queues and Sorting. That's all!
 
-The [SQSORT - Editorial] for the problem is also pretty nice and has some thoughts and ideas that I hadn't explored. The approach discussed in this post is fully deterministic whereas there are interesting randomised algorithms which yield better results in some cases.
+The [SQSORT-Editorial] for the problem is also pretty nice and has some thoughts and ideas that I hadn't explored. The approach discussed in this post is fully deterministic whereas there are interesting randomised algorithms which yield better results in some cases.
 
 [SQSORT]: https://www.codechef.com/JAN21A/problems/SQSORT
 [Codechef]: https://www.codechef.com/
@@ -206,4 +206,4 @@ The [SQSORT - Editorial] for the problem is also pretty nice and has some though
 [A survey of stack-sorting disciplines]: http://www.kurims.kyoto-u.ac.jp/EMIS/journals/EJC/Volume_9/PDF/v9i2a1.pdf
 [Quick Sort]: https://en.wikipedia.org/wiki/Quicksort
 [Merge Sort]: https://en.wikipedia.org/wiki/Merge_sort
-[SQSORT - Editorial]: https://discuss.codechef.com/t/sqsort-editorial/83119
+[SQSORT-Editorial]: https://discuss.codechef.com/t/sqsort-editorial/83119
