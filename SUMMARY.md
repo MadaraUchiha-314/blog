@@ -1,6 +1,6 @@
-# Summary
+# Table of contents
 
 * [Who is this ?](README.md)
-* [Non-Turing-Computation](NTC.md)
-* [Stack-Queue Sort](SQSORT.md)
-* [Persistent Disjoint Set](PERSISTENT-DSU.md)
+* [Non-Turing-Computation](ntc.md)
+* [Stack-Queue Sort](sqsort.md)
+
