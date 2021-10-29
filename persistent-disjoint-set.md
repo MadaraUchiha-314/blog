@@ -1,7 +1,7 @@
 # Persistent Disjoint Set
 
-I was randomly solving problems when I bumped into this interesting problem [New Roads Queries](https://cses.fi/problemset/task/2101). I initially felt that this problem will be completely out of reach, but in the end I came up with an interesting solution for the same and learnt a lot in this process.  
-  
+I was randomly solving problems when I bumped into this interesting problem [New Roads Queries](https://cses.fi/problemset/task/2101). I initially felt that this problem will be completely out of reach, but in the end I came up with an interesting solution for the same and learnt a lot in this process.\
+\
 The problem statement goes like:
 
 > There are N cities in Byteland but no roads between them. However, each day, a new road will be built. There will be a total of M roads. Your task is to process q queries of the form: "after how many days can we travel from city a to city b for the first time?"
@@ -10,9 +10,9 @@ The problem statement goes like:
 
 Let's start with a simple and familiar problem:
 
-> Given a graph of N nodes and queries of the form \(A, B\) check whether the 2 nodes A and B are in the same connected component or not.
+> Given a graph of N nodes and queries of the form (A, B) check whether the 2 nodes A and B are in the same connected component or not.
 
-Although this particular problem can be done using a simple [DFS](https://en.wikipedia.org/wiki/Depth-first_search) or [BFS](https://en.wikipedia.org/wiki/Breadth-first_search) on the graph, it can be done easily using the data structure of [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/). Let's see how.
+Although this particular problem can be done using a simple [DFS](https://en.wikipedia.org/wiki/Depth-first\_search) or [BFS](https://en.wikipedia.org/wiki/Breadth-first\_search) on the graph, it can be done easily using the data structure of [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/). Let's see how.
 
 [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/) gives us a way to do two operations very efficiently on N disjoint sets:
 
@@ -21,7 +21,7 @@ Although this particular problem can be done using a simple [DFS](https://en.wik
 
 So if we add all the edges to the Disjoint Set one by one using the merge operation, in the end we would have a disjoint sets of nodes. Then all we need to do for each query is to answer whether each node is part of the same set or not.
 
-With **path-compression** and **light-to-heavy merging**, we can answer each query in amortised **`log* N`**, where _N_ is the number of nodes in the graph and **`log* N`** is the [Inverse Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function#Inverse).
+With **path-compression** and **light-to-heavy merging**, we can answer each query in amortised **`log* N`**, where _N_ is the number of nodes in the graph and **`log* N`** is the [Inverse Ackermann function](https://en.wikipedia.org/wiki/Ackermann\_function#Inverse).
 
 The code for DSU is also fairly simple and below in an example of the same in C++.
 
@@ -71,23 +71,23 @@ class DisjointSet {
 
 ## Coming back 🔙
 
-Now that we know what [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/) is, let's try to apply this to the problem we have at hand. One notices that the queries we need to answer are time ⏰ based, which means we need to have a snapshot of the graph or the Disjoint Set \(representing the graph\) at each point in time. Let's number these Disjoint Sets representing the graphs at each time by D0, D1, ... DM. But we need to do this smartly without copying the entire Disjoint Set each time.
+Now that we know what [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/) is, let's try to apply this to the problem we have at hand. One notices that the queries we need to answer are time ⏰ based, which means we need to have a snapshot of the graph or the Disjoint Set (representing the graph) at each point in time. Let's number these Disjoint Sets representing the graphs at each time by D0, D1, ... DM. But we need to do this smartly without copying the entire Disjoint Set each time.
 
 For the time being, let's assume that we have some efficient way to get the copy of the Disjoint Set at any time _t_, still how do we solve the problem at hand ??
 
-💡 On careful observation we can see that if two nodes are connected at time _ti_, then they will remain connected in all time _tj_ where _j &gt;= i_. **That means the function of whether two nodes are connected is monotonic over time.**
+💡 On careful observation we can see that if two nodes are connected at time _ti_, then they will remain connected in all time _tj_ where _j >= i_. **That means the function of whether two nodes are connected is monotonic over time.**
 
-This brings us to the idea of using [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm) to find the least time _t_ where any given two nodes are connected. This will take us **`O(log M)`** time where _M_ is the number of edges in the graph. Formally, we are trying to find a Disjoint Set Di such that A and B have the same root in Di and i is minimum.
+This brings us to the idea of using [Binary Search](https://en.wikipedia.org/wiki/Binary\_search\_algorithm) to find the least time _t_ where any given two nodes are connected. This will take us **`O(log M)`** time where _M_ is the number of edges in the graph. Formally, we are trying to find a Disjoint Set Di such that A and B have the same root in Di and i is minimum.
 
 We seem to be getting somewhere now....
 
 Now how do we solve the problem of persistence ??
 
-We notice that our [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/) just uses arrays. We can replace the arrays in the DSU with a [Persistent Array](https://en.wikipedia.org/wiki/Persistent_array) to create a **Persistent Disjoint Set** data structure. This will allows us to query the Disjoint Set at any point in time!!
+We notice that our [Disjoint Set](https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/) just uses arrays. We can replace the arrays in the DSU with a [Persistent Array](https://en.wikipedia.org/wiki/Persistent\_array) to create a **Persistent Disjoint Set** data structure. This will allows us to query the Disjoint Set at any point in time!!
 
 ## Show me some code 💻
 
-First we create a generic [Persistent Array](https://en.wikipedia.org/wiki/Persistent_array). [Persistent Array](https://en.wikipedia.org/wiki/Persistent_array) allows us to look at the state of the array by going back in time.
+First we create a generic [Persistent Array](https://en.wikipedia.org/wiki/Persistent\_array). [Persistent Array](https://en.wikipedia.org/wiki/Persistent\_array) allows us to look at the state of the array by going back in time.
 
 **NOTE:** Actually, the below array is only Partially Persistent which is good enough for the requirements of this problem.
 
@@ -135,7 +135,7 @@ class PersistentArray {
 };
 ```
 
-Using the [Persistent Array](https://en.wikipedia.org/wiki/Persistent_array) we just created, we create the **Persistent Disjoint Set**.
+Using the [Persistent Array](https://en.wikipedia.org/wiki/Persistent\_array) we just created, we create the **Persistent Disjoint Set**.
 
 ```cpp
 class PersistentDisjointSet {
@@ -212,8 +212,6 @@ Here is the link to the [full solution](https://github.com/MadaraUchiha-314/comp
 ## Other Solutions 🧪
 
 There are other interesting ways to solve this same problem which requires knowledge of some concepts like [Heavy Light Decomposition](https://cp-algorithms.com/graph/hld.html) etc. The rough outline of the solution is given [here](https://forum.usaco.guide/t/cses-advance-techniques-section/597/4).
-
-
 
 
 
