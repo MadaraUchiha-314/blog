@@ -20,10 +20,15 @@ I have also worked on the optimizing GPU algorithms by using shared memory and p
 
 Ported Mint.com to a modern tech stack based on React. Implemented Data Layer, a graph based networking layer for REST and GraphQL to add caching, dependency management and consistency to the Web App.&#x20;
 
+Co-designed the end-to-end protocol facilitating real-time collaboration between Mint Live experts and Mint users.
+
+* 🏆 Received Consumer Group Engineering Excellence Award
+
 Improved the performance of the Mint Web Beta by using data-prefetch, code-splitting, module federation and other optimisations.
 
 * 🏆 Received Consumer Group Engineering Excellence Award
-* 🎖️ Received Achieve-Mint Award
+* 🎖️ Received Intuit India Super Star Award
+* 🏅 Received Achieve-Mint Award
 
 Created MintSights™, a UI platform which provides financial insights to millions of Mint user in all the platforms - iOS, Android and Web.
 
