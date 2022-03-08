@@ -81,9 +81,8 @@ Worked on the flagship product [Turbotax](https://turbotax.intuit.com) integrate
 * [text-provider](https://github.com/intuit/text-provider) : A component which provides all the string constants using provider pattern
 * [auto-unit-test](https://github.com/MadaraUchiha-314/auto-unit-test) : No writing unit tests again! Auto-Generating unit tests without any extra code or funny annotations.
 * [LifeSim](https://github.com/MadaraUchiha-314/LifeSim) : A Lifetime Reliability Simulator for Manycore Systems.
-* [cfat](https://github.com/MadaraUchiha-314/codeforces-auto-tester) : A simple tool to help you save time during a codeforces contest.
-* [ECHO (Chatbot)](https://github.com/thegyro/qandabot) : A chatbot that talks to you to solve your problems. Based on ML and AI algorithms like LDA, LSI, doc-2-vec, RNN.
-* [Data Structures Library](https://github.com/MadaraUchiha-314/Data-Structures-Library) : A mini STL library in C++ with implementations some of the basic data-structures.
+
+
 
 ## Services
 
